@@ -9,6 +9,8 @@ Connection Listener internal include file
 #ifdef __cplusplus
 extern "C" {
 #endif
+#include "kvs/error.h"
+#include "SocketConnection.h"
 
 #define CONNECTION_LISTENER_SOCKET_WAIT_FOR_DATA_TIMEOUT     (200 * HUNDREDS_OF_NANOS_IN_A_MILLISECOND)
 #define CONNECTION_LISTENER_SHUTDOWN_TIMEOUT                 (1000 * HUNDREDS_OF_NANOS_IN_A_MILLISECOND)
@@ -89,7 +91,7 @@ STATUS connectionListenerStart(PConnectionListener);
 ////////////////////////////////////////////
 // internal functionalities
 ////////////////////////////////////////////
-PVOID connectionListenerReceiveDataRoutine(PVOID arg);
+PVOID connectionListenerReceiveDataRoutine(PVOID pArg);
 
 #ifdef __cplusplus
 }
